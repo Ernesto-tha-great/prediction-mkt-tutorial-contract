@@ -1,0 +1,10 @@
+{
+  "transactions": [
+    {
+      "rpc": "https://rpc-quicknode-holesky.morphl2.io"
+    },
+    {
+      "rpc": "https://rpc-quicknode-holesky.morphl2.io"
+    }
+  ]
+}
