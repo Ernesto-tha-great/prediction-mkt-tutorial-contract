@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@pythnetwork/IPyth.sol";
 import "@pythnetwork/PythStructs.sol";
 
-contract CryptoPredictionMarket is ReentrancyGuard {
+contract CryptoPredictionsMarket is ReentrancyGuard {
     using SafeERC20 for IERC20;
 
     struct Market {
@@ -191,5 +191,13 @@ contract CryptoPredictionMarket is ReentrancyGuard {
             market.resolved,
             market.outcome
         );
+    }
+
+    function getAllMarkets() external view returns (Market[] memory) {
+        Market[] memory allMarkets = new Market[](marketCount);
+        for (uint256 i = 1; i <= marketCount; i++) {
+            allMarkets[i - 1] = markets[i];
+        }
+        return allMarkets;
     }
 }
